@@ -50,9 +50,9 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onToggle, onSuccess,
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       {error && (
-        <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-500 text-sm rounded-xl">
+        <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-500 text-xs sm:text-sm rounded-xl">
           {error}
         </div>
       )}
@@ -128,7 +128,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onToggle, onSuccess,
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-brand text-bg-dark rounded-xl py-4 font-bold text-xs uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-white transition-all disabled:opacity-50 disabled:cursor-not-allowed group brand-glow"
+        className="w-full bg-brand text-bg-dark rounded-xl py-3.5 sm:py-4 font-bold text-[10px] sm:text-xs uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-white transition-all disabled:opacity-50 disabled:cursor-not-allowed group brand-glow"
       >
         {isLoading ? (
           <Loader2 className="w-4 h-4 animate-spin" />

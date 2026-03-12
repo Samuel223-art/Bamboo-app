@@ -107,20 +107,20 @@ export const TradesPage: React.FC<TradesPageProps> = ({ user, onUpdateUser }) =>
   const totalEarned = investments.reduce((acc, inv) => acc + calculateStats(inv).earned, 0);
 
   return (
-    <div className="p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-8">
+    <div className="p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-6 sm:space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-4xl font-display font-bold text-white tracking-tight">My Active Trades</h1>
-          <p className="text-slate-400 mt-1 font-medium">Monitor your growing portfolio and harvest cycles.</p>
+          <h1 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">My Active Trades</h1>
+          <p className="text-slate-400 text-sm sm:text-base mt-1 font-medium">Monitor your growing portfolio and harvest cycles.</p>
         </div>
         
-        <div className="glass-dark p-6 rounded-[32px] border border-white/10 flex items-center gap-6">
-          <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center border border-brand/20 brand-glow">
-            <Wallet className="w-6 h-6 text-brand" />
+        <div className="glass-dark p-5 sm:p-6 rounded-[24px] sm:rounded-[32px] border border-white/10 flex items-center gap-4 sm:gap-6">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand/10 rounded-xl sm:rounded-2xl flex items-center justify-center border border-brand/20 brand-glow">
+            <Wallet className="w-5 h-5 sm:w-6 sm:h-6 text-brand" />
           </div>
           <div>
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Total Accrued Profit</p>
-            <p className="text-2xl font-display font-bold text-white">${totalEarned.toFixed(2)}</p>
+            <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Total Accrued Profit</p>
+            <p className="text-xl sm:text-2xl font-display font-bold text-white">${totalEarned.toFixed(2)}</p>
           </div>
         </div>
       </div>
@@ -145,45 +145,45 @@ export const TradesPage: React.FC<TradesPageProps> = ({ user, onUpdateUser }) =>
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-dark rounded-[32px] border border-white/5 p-8 relative overflow-hidden group hover:border-brand/30 transition-all"
+                className="glass-dark rounded-[24px] sm:rounded-[32px] border border-white/5 p-6 sm:p-8 relative overflow-hidden group hover:border-brand/30 transition-all"
               >
-                <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <Leaf className="w-32 h-32" />
+                <div className="absolute top-0 right-0 p-6 sm:p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <Leaf className="w-24 h-24 sm:w-32 sm:h-32" />
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-8 relative z-10">
-                  <div className="flex items-center gap-6 min-w-[240px]">
-                    <div className="w-16 h-16 bg-brand/10 rounded-2xl flex items-center justify-center border border-brand/20 brand-glow">
-                      <Timer className="w-8 h-8 text-brand" />
+                <div className="flex flex-wrap items-center justify-between gap-6 sm:gap-8 relative z-10">
+                  <div className="flex items-center gap-4 sm:gap-6 min-w-[200px] sm:min-w-[240px]">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand/10 rounded-xl sm:rounded-2xl flex items-center justify-center border border-brand/20 brand-glow">
+                      <Timer className="w-6 h-6 sm:w-8 sm:h-8 text-brand" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-display font-bold text-white">{inv.productName}</h3>
+                      <h3 className="text-lg sm:text-xl font-display font-bold text-white">{inv.productName}</h3>
                       <div className="flex items-center gap-3 mt-1">
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                        <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
                           ID: {inv.id.slice(-6).toUpperCase()}
                         </span>
                         <span className="w-1.5 h-1.5 bg-brand rounded-full animate-pulse" />
-                        <span className="text-[10px] font-bold text-brand uppercase tracking-widest">Active</span>
+                        <span className="text-[9px] sm:text-[10px] font-bold text-brand uppercase tracking-widest">Active</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 flex-1">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 flex-1">
                     <div className="space-y-1">
-                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Invested</p>
-                      <p className="text-lg font-bold text-white">${inv.amount.toLocaleString()}</p>
+                      <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Invested</p>
+                      <p className="text-base sm:text-lg font-bold text-white">${inv.amount.toLocaleString()}</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Daily Yield</p>
-                      <p className="text-lg font-bold text-brand">{inv.dailyYield}%</p>
+                      <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Daily Yield</p>
+                      <p className="text-base sm:text-lg font-bold text-brand">{inv.dailyYield}%</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Claimable</p>
-                      <p className="text-lg font-bold text-emerald-500">${calculateStats(inv).claimable.toFixed(2)}</p>
+                      <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Claimable</p>
+                      <p className="text-base sm:text-lg font-bold text-emerald-500">${calculateStats(inv).claimable.toFixed(2)}</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Remaining</p>
-                      <p className="text-lg font-bold text-white">{calculateStats(inv).remainingDays} Days</p>
+                      <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Remaining</p>
+                      <p className="text-base sm:text-lg font-bold text-white">{calculateStats(inv).remainingDays} Days</p>
                     </div>
                   </div>
 

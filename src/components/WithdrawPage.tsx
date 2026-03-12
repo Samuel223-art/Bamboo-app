@@ -149,21 +149,21 @@ export const WithdrawPage: React.FC<WithdrawPageProps> = ({ user, onUpdateUser }
 
   return (
     <div className="flex flex-col">
-      <main className="flex-1 p-6 lg:p-10 max-w-4xl mx-auto w-full space-y-8">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 max-w-4xl mx-auto w-full space-y-6 sm:space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1">
-            <h1 className="text-4xl font-display font-bold text-white tracking-tight">Withdraw Funds</h1>
-            <p className="text-slate-400 font-medium">Transfer your earnings to your external TRC20 wallet.</p>
+            <h1 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">Withdraw Funds</h1>
+            <p className="text-slate-400 text-sm sm:text-base font-medium">Transfer your earnings to your external TRC20 wallet.</p>
           </div>
           
-          <div className="glass-dark px-6 py-4 rounded-2xl border border-white/10 flex items-center gap-4">
+          <div className="glass-dark px-5 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-white/10 flex items-center gap-4">
             <div className="w-10 h-10 bg-brand/10 rounded-xl flex items-center justify-center border border-brand/20">
               <Wallet className="w-5 h-5 text-brand" />
             </div>
             <div>
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Available Balance</p>
-              <p className="text-xl font-bold text-white">${user.balance?.toLocaleString() || '0.00'}</p>
+              <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Available Balance</p>
+              <p className="text-lg sm:text-xl font-bold text-white">${user.balance?.toLocaleString() || '0.00'}</p>
             </div>
           </div>
         </div>
@@ -172,33 +172,33 @@ export const WithdrawPage: React.FC<WithdrawPageProps> = ({ user, onUpdateUser }
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`p-6 rounded-[32px] border flex flex-col md:flex-row items-center gap-6 ${
+          className={`p-5 sm:p-6 rounded-[24px] sm:rounded-[32px] border flex flex-col md:flex-row items-center gap-4 sm:gap-6 ${
             eligibility.isEligible 
               ? 'bg-brand/5 border-brand/20' 
               : 'bg-orange-500/5 border-orange-500/20'
           }`}
         >
-          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 ${
+          <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0 ${
             eligibility.isEligible ? 'bg-brand/10' : 'bg-orange-500/10'
           }`}>
             {eligibility.isEligible ? (
-              <Unlock className="w-8 h-8 text-brand" />
+              <Unlock className="w-6 h-6 sm:w-8 sm:h-8 text-brand" />
             ) : (
-              <Lock className="w-8 h-8 text-orange-500" />
+              <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-orange-500" />
             )}
           </div>
           <div className="space-y-1 text-center md:text-left">
-            <h3 className={`text-lg font-bold ${eligibility.isEligible ? 'text-brand' : 'text-orange-500'}`}>
+            <h3 className={`text-base sm:text-lg font-bold ${eligibility.isEligible ? 'text-brand' : 'text-orange-500'}`}>
               {eligibility.isEligible ? 'Withdrawal Unlocked' : 'Withdrawal Locked'}
             </h3>
-            <p className="text-sm text-slate-400 font-medium leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed">
               {eligibility.reason}
             </p>
           </div>
           {!eligibility.isEligible && eligibility.nextUnlockDate && (
-            <div className="ml-auto bg-white/5 px-4 py-2 rounded-xl border border-white/5">
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Unlock Date</p>
-              <p className="text-sm font-bold text-white">{eligibility.nextUnlockDate.toLocaleDateString()}</p>
+            <div className="ml-auto bg-white/5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-white/5">
+              <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Unlock Date</p>
+              <p className="text-xs sm:text-sm font-bold text-white">{eligibility.nextUnlockDate.toLocaleDateString()}</p>
             </div>
           )}
         </motion.div>
@@ -209,12 +209,12 @@ export const WithdrawPage: React.FC<WithdrawPageProps> = ({ user, onUpdateUser }
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="glass-dark rounded-[40px] border border-white/5 p-8 lg:p-10 space-y-8"
+              className="glass-dark rounded-[24px] sm:rounded-[40px] border border-white/5 p-6 sm:p-8 lg:p-10 space-y-6 sm:space-y-8"
             >
-              <form onSubmit={handleWithdraw} className="space-y-8">
-                <div className="space-y-6">
+              <form onSubmit={handleWithdraw} className="space-y-6 sm:space-y-8">
+                <div className="space-y-5 sm:space-y-6">
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Withdrawal Amount (USD)</label>
+                    <label className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Withdrawal Amount (USD)</label>
                     <div className="relative">
                       <input 
                         type="number" 
@@ -222,24 +222,24 @@ export const WithdrawPage: React.FC<WithdrawPageProps> = ({ user, onUpdateUser }
                         value={amount}
                         onChange={(e) => setAmount(e.target.value)}
                         disabled={!eligibility.isEligible || loading}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white text-xl font-bold focus:outline-none focus:border-brand/50 transition-colors disabled:opacity-50"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-4 sm:py-5 text-white text-lg sm:text-xl font-bold focus:outline-none focus:border-brand/50 transition-colors disabled:opacity-50"
                       />
                       <button 
                         type="button"
                         onClick={() => setAmount(user.balance.toString())}
-                        className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-bold text-brand uppercase tracking-widest hover:underline"
+                        className="absolute right-5 sm:right-6 top-1/2 -translate-y-1/2 text-[9px] sm:text-[10px] font-bold text-brand uppercase tracking-widest hover:underline"
                       >
                         Max
                       </button>
                     </div>
                     <div className="flex justify-between px-1">
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Min: $50.00</p>
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Fee: $1.00</p>
+                      <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Min: $50.00</p>
+                      <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Fee: $1.00</p>
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">TRC20 Wallet Address</label>
+                    <label className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">TRC20 Wallet Address</label>
                     <div className="relative">
                       <input 
                         type="text" 
@@ -247,13 +247,13 @@ export const WithdrawPage: React.FC<WithdrawPageProps> = ({ user, onUpdateUser }
                         value={walletAddress}
                         onChange={(e) => setWalletAddress(e.target.value)}
                         disabled={!eligibility.isEligible || loading}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white text-sm font-medium focus:outline-none focus:border-brand/50 transition-colors disabled:opacity-50"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-4 sm:py-5 text-white text-xs sm:text-sm font-medium focus:outline-none focus:border-brand/50 transition-colors disabled:opacity-50"
                       />
-                      <div className="absolute right-6 top-1/2 -translate-y-1/2">
-                        <ShieldCheck className="w-5 h-5 text-slate-600" />
+                      <div className="absolute right-5 sm:right-6 top-1/2 -translate-y-1/2">
+                        <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600" />
                       </div>
                     </div>
-                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Ensure this is a TRON (TRC20) network address.</p>
+                    <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">Ensure this is a TRON (TRC20) network address.</p>
                   </div>
                 </div>
 
@@ -273,16 +273,16 @@ export const WithdrawPage: React.FC<WithdrawPageProps> = ({ user, onUpdateUser }
                 <button 
                   type="submit"
                   disabled={!eligibility.isEligible || loading || !amount || !walletAddress}
-                  className="w-full bg-brand text-bg-dark py-6 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand/20 brand-glow disabled:opacity-50 disabled:brand-glow-none flex items-center justify-center gap-3"
+                  className="w-full bg-brand text-bg-dark py-4 sm:py-6 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand/20 brand-glow disabled:opacity-50 disabled:brand-glow-none flex items-center justify-center gap-3"
                 >
                   {loading ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
                       Processing...
                     </>
                   ) : (
                     <>
-                      <ArrowUpRight className="w-5 h-5" />
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
                       Confirm Withdrawal
                     </>
                   )}

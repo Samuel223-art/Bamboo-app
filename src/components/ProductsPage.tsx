@@ -65,12 +65,12 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ user, onUpdateUser, 
   }
 
   return (
-    <div className="p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-8">
+    <div className="p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-6 sm:space-y-8">
       {/* Header & Filters */}
-      <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8">
+      <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 sm:gap-8">
         <div className="space-y-1">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white tracking-tight">Investment Grove</h1>
-          <p className="text-slate-400 font-medium">Discover sustainable opportunities for your capital.</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight">Investment Grove</h1>
+          <p className="text-slate-400 text-sm sm:text-base font-medium">Discover sustainable opportunities for your capital.</p>
         </div>
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 w-full xl:w-auto">
@@ -116,19 +116,19 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ user, onUpdateUser, 
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
               onClick={() => onSelectProduct(product)}
-              className="glass-dark rounded-[32px] border border-white/5 p-8 space-y-6 hover:border-brand/30 transition-all group relative overflow-hidden cursor-pointer"
+              className="glass-dark rounded-[24px] sm:rounded-[32px] border border-white/5 p-6 sm:p-8 space-y-5 sm:space-y-6 hover:border-brand/30 transition-all group relative overflow-hidden cursor-pointer"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <Icon className="w-24 h-24" />
+              <div className="absolute top-0 right-0 p-4 sm:p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                <Icon className="w-16 h-16 sm:w-24 sm:h-24" />
               </div>
 
               <div className="flex items-start justify-between relative z-10">
-                <div className={`p-4 rounded-2xl bg-brand/10 border border-brand/20 brand-glow`}>
-                  <Icon className="w-6 h-6 text-brand" />
+                <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-brand/10 border border-brand/20 brand-glow`}>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-brand" />
                 </div>
                 <div className="text-right">
-                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{product.type}</p>
-                  <div className={`mt-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-tighter inline-block ${
+                  <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">{product.type}</p>
+                  <div className={`mt-1 px-2 py-0.5 rounded-full text-[8px] sm:text-[9px] font-bold uppercase tracking-tighter inline-block ${
                     product.riskLevel === 'Low' ? 'bg-emerald-500/10 text-emerald-500' :
                     product.riskLevel === 'Medium' ? 'bg-orange-500/10 text-orange-500' :
                     'bg-red-500/10 text-red-500'
@@ -139,14 +139,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ user, onUpdateUser, 
               </div>
 
               <div className="space-y-2 relative z-10">
-                <h3 className="text-xl font-display font-bold text-white group-hover:text-brand transition-colors">{product.name}</h3>
-                <div className="flex items-center gap-4 text-slate-400 text-xs font-medium">
+                <h3 className="text-lg sm:text-xl font-display font-bold text-white group-hover:text-brand transition-colors">{product.name}</h3>
+                <div className="flex items-center gap-3 sm:gap-4 text-slate-400 text-[10px] sm:text-xs font-medium">
                   <div className="flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5" />
+                    <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                     <span>{product.durationDays} Days</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <TrendingUp className="w-3.5 h-3.5 text-brand" />
+                    <TrendingUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand" />
                     <span className="text-brand">{product.dailyYield}% Daily</span>
                   </div>
                 </div>
@@ -154,12 +154,12 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ user, onUpdateUser, 
 
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5 relative z-10">
                 <div>
-                  <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Min. Entry</p>
-                  <p className="text-lg font-bold text-white">${product.minAmount}</p>
+                  <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Min. Entry</p>
+                  <p className="text-base sm:text-lg font-bold text-white">${product.minAmount}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Total Return</p>
-                  <p className="text-lg font-bold text-brand">{product.totalReturn.toFixed(1)}%</p>
+                  <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Total Return</p>
+                  <p className="text-base sm:text-lg font-bold text-brand">{product.totalReturn.toFixed(1)}%</p>
                 </div>
               </div>
 

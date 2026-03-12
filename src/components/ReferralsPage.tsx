@@ -50,38 +50,38 @@ export const ReferralsPage: React.FC<ReferralsPageProps> = ({ user }) => {
 
   return (
     <div className="flex flex-col">
-      <main className="flex-1 p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-10">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto w-full space-y-8 sm:space-y-10">
         {/* Hero Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#0a1a14] via-[#050b09] to-[#020617] p-10 lg:p-14 shadow-2xl"
+          className="relative overflow-hidden rounded-[24px] sm:rounded-[40px] border border-white/10 bg-gradient-to-br from-[#0a1a14] via-[#050b09] to-[#020617] p-6 sm:p-10 lg:p-14 shadow-2xl"
         >
           <div className="absolute inset-0 opacity-10" 
                style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #10b981 1px, transparent 0)', backgroundSize: '40px 40px' }} />
           
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/10 border border-brand/20">
-                <Leaf className="w-4 h-4 text-brand" />
-                <span className="text-[10px] font-bold text-brand uppercase tracking-[0.2em]">Referral Program</span>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-brand/10 border border-brand/20">
+                <Leaf className="w-3.5 h-3.5 sm:w-4 h-4 text-brand" />
+                <span className="text-[9px] sm:text-[10px] font-bold text-brand uppercase tracking-[0.2em]">Referral Program</span>
               </div>
               
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl font-display font-bold tracking-tighter text-white leading-[0.9]">
+              <div className="space-y-3 sm:space-y-4">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tighter text-white leading-[0.9]">
                   Grow Your Grove, <br />
                   <span className="text-brand italic">Earn Together.</span>
                 </h1>
-                <p className="text-slate-400 max-w-md text-lg font-medium leading-relaxed">
+                <p className="text-slate-400 max-w-md text-sm sm:text-lg font-medium leading-relaxed">
                   Invite your friends to Bamboo Capital. When they join using your code, you'll receive a $6 bonus and they'll get $5 instantly.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between group hover:bg-white/10 transition-all">
+                <div className="flex-1 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4 flex items-center justify-between group hover:bg-white/10 transition-all">
                   <div>
-                    <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Your Referral Code</p>
-                    <p className="text-xl font-mono font-bold text-brand tracking-widest">{user.my_referral_code || "REF-XXXX"}</p>
+                    <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Your Referral Code</p>
+                    <p className="text-lg sm:text-xl font-mono font-bold text-brand tracking-widest">{user.my_referral_code || "REF-XXXX"}</p>
                   </div>
                   <button 
                     onClick={() => {
@@ -89,15 +89,15 @@ export const ReferralsPage: React.FC<ReferralsPageProps> = ({ user }) => {
                       const btn = document.activeElement as HTMLButtonElement;
                       if (btn) {
                         const originalContent = btn.innerHTML;
-                        btn.innerHTML = '<span class="text-[10px] font-bold uppercase tracking-widest">Copied!</span>';
+                        btn.innerHTML = '<span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest">Copied!</span>';
                         setTimeout(() => {
                           btn.innerHTML = originalContent;
                         }, 2000);
                       }
                     }}
-                    className="p-3 bg-brand/10 rounded-xl text-brand hover:bg-brand hover:text-bg-dark transition-all min-w-[44px] flex items-center justify-center"
+                    className="p-2 sm:p-3 bg-brand/10 rounded-lg sm:rounded-xl text-brand hover:bg-brand hover:text-bg-dark transition-all min-w-[40px] sm:min-w-[44px] flex items-center justify-center"
                   >
-                    <Copy className="w-5 h-5" />
+                    <Copy className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
                 <button 
@@ -107,13 +107,13 @@ export const ReferralsPage: React.FC<ReferralsPageProps> = ({ user }) => {
                     const btn = document.activeElement as HTMLButtonElement;
                     if (btn) {
                       const originalContent = btn.innerHTML;
-                      btn.innerHTML = '<span class="text-[10px] font-bold uppercase tracking-widest">Link Copied!</span>';
+                      btn.innerHTML = '<span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest">Link Copied!</span>';
                       setTimeout(() => {
                         btn.innerHTML = originalContent;
                       }, 2000);
                     }
                   }}
-                  className="bg-brand text-bg-dark px-10 py-4 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand/20 brand-glow flex items-center justify-center gap-2"
+                  className="bg-brand text-bg-dark px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em] hover:bg-white transition-all shadow-xl shadow-brand/20 brand-glow flex items-center justify-center gap-2"
                 >
                   Share Link
                 </button>
@@ -150,7 +150,7 @@ export const ReferralsPage: React.FC<ReferralsPageProps> = ({ user }) => {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {[
             { label: 'Total Referrals', value: '0', icon: Users, color: 'text-brand' },
             { label: 'Pending Rewards', value: '$0.00', icon: Clock, color: 'text-slate-400' },
@@ -162,16 +162,16 @@ export const ReferralsPage: React.FC<ReferralsPageProps> = ({ user }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="glass-dark rounded-[32px] p-8 border border-white/5 space-y-4 hover:border-brand/20 transition-all group"
+              className="glass-dark rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 border border-white/5 space-y-3 sm:space-y-4 hover:border-brand/20 transition-all group"
             >
               <div className="flex items-center justify-between">
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{stat.label}</p>
-                <stat.icon className={`w-4 h-4 ${stat.color} opacity-50 group-hover:opacity-100 transition-opacity`} />
+                <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{stat.label}</p>
+                <stat.icon className={`w-3.5 h-3.5 sm:w-4 h-4 ${stat.color} opacity-50 group-hover:opacity-100 transition-opacity`} />
               </div>
-              <h3 className="text-4xl font-display font-bold text-white tracking-tight">{stat.value}</h3>
-              <div className="flex items-center gap-2 pt-4 border-t border-white/5">
+              <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">{stat.value}</h3>
+              <div className="flex items-center gap-2 pt-3 sm:pt-4 border-t border-white/5">
                 <TrendingUp className="w-3 h-3 text-brand" />
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Season Performance</span>
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest">Season Performance</span>
               </div>
             </motion.div>
           ))}
@@ -182,28 +182,28 @@ export const ReferralsPage: React.FC<ReferralsPageProps> = ({ user }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="glass-dark rounded-[40px] border border-white/5 overflow-hidden"
+          className="glass-dark rounded-[24px] sm:rounded-[40px] border border-white/5 overflow-hidden"
         >
-          <div className="p-8 border-b border-white/5 flex items-center justify-between">
-            <h2 className="text-2xl font-display font-bold text-white">Referral History</h2>
+          <div className="p-6 sm:p-8 border-b border-white/5 flex items-center justify-between">
+            <h2 className="text-xl sm:text-2xl font-display font-bold text-white">Referral History</h2>
             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
               <span className="w-1.5 h-1.5 bg-brand rounded-full animate-pulse" />
-              <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Live Updates</span>
+              <span className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Live Updates</span>
             </div>
           </div>
           
           <div className="divide-y divide-white/5">
             {referralHistory.map((ref, i) => (
-              <div key={i} className="p-8 flex items-center gap-6 hover:bg-white/[0.02] transition-colors group">
-                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:brand-glow transition-all">
-                  <Users className="w-6 h-6 text-slate-500 group-hover:text-brand" />
+              <div key={i} className="p-6 sm:p-8 flex items-center gap-4 sm:gap-6 hover:bg-white/[0.02] transition-colors group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/10 group-hover:brand-glow transition-all">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-slate-500 group-hover:text-brand" />
                 </div>
                 <div className="flex-1">
-                  <p className="font-bold text-white">{ref.name}</p>
-                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">{ref.date}</p>
+                  <p className="text-sm sm:text-base font-bold text-white">{ref.name}</p>
+                  <p className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">{ref.date}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm font-bold text-slate-400">{ref.status}</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-400">{ref.status}</p>
                 </div>
               </div>
             ))}

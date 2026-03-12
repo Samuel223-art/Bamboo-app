@@ -132,7 +132,7 @@ export const Navigation: React.FC<NavigationProps> = ({ user, activeTab, onTabCh
       </aside>
 
       {/* Mobile Bottom Menu */}
-      <nav className="sm:hidden fixed bottom-0 left-0 right-0 glass-dark border-t border-white/10 px-2 py-2 z-[100] flex items-center justify-around pb-safe">
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 glass-dark border-t border-white/10 px-1 py-1.5 z-[100] flex items-center justify-around pb-safe">
         {navItems.filter(item => ['overview', 'products', 'trades', 'referrals'].includes(item.id)).map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -140,10 +140,10 @@ export const Navigation: React.FC<NavigationProps> = ({ user, activeTab, onTabCh
             <button
               key={item.id}
               onClick={() => onTabChange(item.id)}
-              className="flex flex-col items-center gap-1 px-3 py-1 rounded-lg transition-colors"
+              className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg transition-colors"
             >
-              <Icon className={`w-5 h-5 ${isActive ? 'text-brand' : 'text-slate-500'}`} />
-              <span className={`text-[10px] font-bold uppercase tracking-tighter ${isActive ? 'text-brand' : 'text-slate-500'}`}>
+              <Icon className={`w-4 h-4 ${isActive ? 'text-brand' : 'text-slate-500'}`} />
+              <span className={`text-[8px] font-bold uppercase tracking-tighter ${isActive ? 'text-brand' : 'text-slate-500'}`}>
                 {item.label}
               </span>
               {isActive && (

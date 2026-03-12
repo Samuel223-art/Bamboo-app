@@ -17,9 +17,9 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
       />
       
       {/* Left Side: Form */}
-      <div className="flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-24 py-12 relative z-10">
-        <div className="max-w-md w-full mx-auto space-y-10">
-          <div className="space-y-6">
+      <div className="flex-1 flex flex-col justify-center px-6 sm:px-12 lg:px-24 py-8 sm:py-12 relative z-10">
+        <div className="max-w-md w-full mx-auto space-y-8 sm:space-y-10">
+          <div className="space-y-4 sm:space-y-6">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -35,17 +35,17 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="w-12 h-12 bg-brand/10 border border-brand/20 rounded-2xl flex items-center justify-center brand-glow cursor-pointer"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-brand/10 border border-brand/20 rounded-xl sm:rounded-2xl flex items-center justify-center brand-glow cursor-pointer"
               >
-                <Leaf className="w-6 h-6 text-brand" />
+                <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-brand" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="font-display font-bold text-2xl tracking-tight uppercase text-white block leading-none">Bamboo</span>
-                <span className="text-[10px] font-bold text-brand uppercase tracking-[0.3em] mt-1 block">Capital</span>
+                <span className="font-display font-bold text-xl sm:text-2xl tracking-tight uppercase text-white block leading-none">Bamboo</span>
+                <span className="text-[9px] sm:text-[10px] font-bold text-brand uppercase tracking-[0.3em] mt-1 block">Capital</span>
               </motion.div>
             </motion.div>
             
@@ -54,7 +54,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl font-display font-bold tracking-tight text-white"
+                className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-white"
               >
                 {title}
               </motion.h1>
@@ -62,7 +62,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-slate-400 font-medium"
+                className="text-slate-400 text-sm sm:text-base font-medium"
               >
                 {subtitle}
               </motion.p>
