@@ -25,7 +25,7 @@ export const DepositPage: React.FC<DepositPageProps> = ({ user, onUpdateUser }) 
   const [copied, setCopied] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
-  const walletAddress = "TJEMQbShoVakT5dP7NBBpU5ALF7HNcv4dh";
+  const walletAddress = import.meta.env.VITE_MY_WALLET_ADDRESS || "";
   const network = "Tron (TRC20)";
   const minDeposit = 100;
 

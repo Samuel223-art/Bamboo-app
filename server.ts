@@ -26,9 +26,14 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 
 async function verifyTronTransaction(txHash: string, expectedAmount: number) {
-  const TRONGRID_API_KEY = process.env.TRONGRID_API_KEY || '72eb9e6f-400b-4cf5-bdcd-f68e84d6c78b';
-  const MY_WALLET = process.env.MY_WALLET_ADDRESS || 'TJEMQbShoVakT5dP7NBBpU5ALF7HNcv4dh';
+  const TRONGRID_API_KEY = process.env.TRONGRID_API_KEY;
+  const MY_WALLET = process.env.MY_WALLET_ADDRESS;
   const USDT_CONTRACT = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t';
+
+  if (!TRONGRID_API_KEY || !MY_WALLET) {
+    console.error('Missing environment variables: TRONGRID_API_KEY or MY_WALLET_ADDRESS');
+    return { valid: false, error: 'Server configuration error.' };
+  }
 
   try {
     // 1. Get transaction events (best for TRC20)
