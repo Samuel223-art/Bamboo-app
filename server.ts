@@ -4,7 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, addDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
-import { PRODUCTS } from "./src/constants/products.js";
+import { PRODUCTS } from "./src/constants/products.ts";
 import axios from "axios";
 
 const __filename = fileURLToPath(import.meta.url);
