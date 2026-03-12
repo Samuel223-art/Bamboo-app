@@ -54,8 +54,8 @@ export const PRODUCTS: Product[] = productNames.map((name, index) => {
   const maxAmount = minAmount * 10;
   
   // Yield: Higher risk/amount usually means higher yield.
-  // We'll make it between 0.5% and 2.5% daily.
-  const dailyYield = 0.5 + (index * 0.04);
+  // We'll make it between 1.2% and 4.0% daily to ensure total return > 100%
+  const dailyYield = 1.2 + (index * 0.06);
   const totalReturn = dailyYield * durationDays;
   
   const riskLevel: Product['riskLevel'] = index < 15 ? 'Low' : index < 35 ? 'Medium' : 'High';

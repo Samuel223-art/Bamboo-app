@@ -158,7 +158,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ user, onUpdateUser, 
                   <p className="text-base sm:text-lg font-bold text-white">${product.minAmount}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Total Return</p>
+                  <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Total Profit</p>
                   <p className="text-base sm:text-lg font-bold text-brand">{product.totalReturn.toFixed(1)}%</p>
                 </div>
               </div>

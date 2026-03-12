@@ -127,7 +127,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, u
                 <p className="text-lg sm:text-xl font-bold text-white">${product.minAmount}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Total Return</p>
+                <p className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-widest">Total Profit</p>
                 <p className="text-lg sm:text-xl font-bold text-brand">{product.totalReturn.toFixed(1)}%</p>
               </div>
             </div>
@@ -227,8 +227,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product, u
                 <span className="text-xs sm:text-sm font-bold text-brand">${((investAmount * product.dailyYield) / 100).toFixed(2)}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Return</span>
-                <span className="text-xs sm:text-sm font-bold text-white">${((investAmount * product.dailyYield * product.durationDays) / 100).toFixed(2)}</span>
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Profit</span>
+                <span className="text-xs sm:text-sm font-bold text-brand">${((investAmount * product.dailyYield * product.durationDays) / 100).toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between items-center border-t border-brand/10 pt-3 mt-3">
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total Payout</span>
+                <span className="text-xs sm:text-sm font-bold text-white">${(investAmount + (investAmount * product.dailyYield * product.durationDays) / 100).toFixed(2)}</span>
               </div>
             </div>
 
